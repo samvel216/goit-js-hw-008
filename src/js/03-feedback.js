@@ -24,6 +24,9 @@ const submitButtonSend = (event) => {
   email: localEmail,
   message: localMessage
 }
+if (emailInputEl.value === "" || messageTextareaEl.value === "" ) {
+ return;
+}
   let jsonObjectEmailMessage = JSON.stringify(objectEmailMessage);
   localStorage.setItem("feedback-form-state", jsonObjectEmailMessage);
   let stringObjectEmailMessage = localStorage.getItem("feedback-form-state");
